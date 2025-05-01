@@ -1,0 +1,1 @@
+//criar um evento que faz tudo de uma venda (atualiza estoque e relatorio de vendas)
