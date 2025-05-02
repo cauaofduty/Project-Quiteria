@@ -1,10 +1,46 @@
+using System;
 using System.Text;
 public class Produto
 {
-    private string Nome { get; set; }
-    private string Descricao { get; set; }//nesse caso, o sabor, ou seria melhor fazer diretamente?
+    //criar propriedades personalizadas]
+    private string nome;
+
+    public string Nome { get{ return nome; }
+        set
+        {
+            if(string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException("Digite um nome para o produto.");
+            }
+            nome =  value;
+        } 
+    }
+
+    //na verdade, descrição será opcional
+    //nesse caso, o sabor mas poderia ser um produto simples ex melancia
+    private string descricao;
+    public string Descricao { get{ return descricao; } 
+        set
+        {
+            if(string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException("Digite alguma descrição para o produto");
+            }
+        }
+    }
     private double Preco { get; set; }
-    private int Quantidade { get; set; }
+
+    private int quantidade;
+    public int Quantidade {get { return quantidade; }
+        set
+        {
+        if(quantidade < 0)
+        {
+            throw new ArgumentException("Há algum erro com a quantidade. Verifique se o estoque está atualizado.");
+        }
+        quantidade = value;
+        }
+        }
 
     
     //to string substituido de object
