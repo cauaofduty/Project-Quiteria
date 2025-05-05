@@ -17,7 +17,7 @@ public class Produto
     }
 
     //na verdade, descrição será opcional
-    //nesse caso, o sabor mas poderia ser um produto simples ex melancia
+    //nesse caso, o sabor mas poderia ser um produto simples sem descricao ex melancia
     private string descricao;
     public string Descricao { get{ return descricao; } 
         set
